@@ -9,13 +9,16 @@ string[] StringParse(string[] stringArray)
         if (word.Length <= 3) n++;
     }
     string[] newArray = new string[n];
-    n = 0;
-    foreach (string word in stringArray)// fill in the new array by words with length less of equal 3 letters
+    if (n != 0)
     {
-        if (word.Length <= 3)
+        n = 0;
+        foreach (string word in stringArray)// fill in the new array by words with length less of equal 3 letters
         {
-            newArray[n] = word;
-            n++;
+            if (word.Length <= 3)
+            {
+                newArray[n] = word;
+                n++;
+            }
         }
     }
     return newArray;
@@ -33,8 +36,8 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
-string [] arr = {"hello", "2", "world", ":-)"};
-//string[] arr = { "Russian", "Denmark", "Kazan" };
+//string[] arr = { "hello", "2", "world", ":-)" };
+string[] arr = { "Russian", "Denmark", "Kazan" };
 //string[] arr = { "1234", "1567", "-2", "computer science" };
 Console.Write("Original array: ");
 PrintArray(arr);
